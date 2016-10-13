@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title></title>
+    <!--滑动插件css-->
+		<link rel="stylesheet" href="lib/Swiper/dist/css/swiper.css"/>
+		<!--引导页样式-->
+		<link rel="stylesheet" href="css/guidePages/guidePage.css" />
+		<!--home首页样式-->
+		<link rel="stylesheet" href="css/home/home.css" />
+		<!--商品分类页面样式-->
+		<link rel="stylesheet" href="css/list/list.css" />
+		<!--单类商品页面样式-->
+		<link rel="stylesheet" href="css/goods/goodsList.css" />
+		
+    <link rel="manifest" href="manifest.json">
+
+    <!-- un-comment this code to enable service worker
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js')
+          .then(() => console.log('service worker installed'))
+          .catch(err => console.log('Error', err));
+      }
+    </script>-->
+		
+    <link href="lib/ionic/css/ionic.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- IF using Sass (run gulp sass first), then uncomment below and remove the CSS includes above
+    <link href="css/ionic.app.css" rel="stylesheet">
+    -->
+		
+    <!-- ionic/angularjs js -->
+    <script src="lib/ionic/js/ionic.bundle.js"></script>
+
+    <!-- cordova script (this will be a 404 during development) -->
+    <script src="cordova.js"></script>
+		
+		
+		<!--插件js-->
+		<script src="lib/jquery/dist/jquery.js"></script>
+		<script src="lib/Swiper/dist/js/swiper.js"></script>
+		<script src="lib/ionic-image-lazy-load/ionic-image-lazy-load.js"></script>
+		
+    <!-- 全局 js -->
+    <script src="js/app.js"></script>
+    <!--控制器模块-->
+    <script src="js/controllers.js"></script>
+    <!--服务模块-->
+    <script src="js/services.js"></script>
+    <!--路由模块-->
+    <script src="js/route.js"></script>
+    <!--全局变量模块-->
+    <script src="js/global.js"></script>
+    <!--配置兼容性模块-->
+    <script src="js/config.js"></script>
+    
+    
+    <!--引导页js-->
+    <script src="areas/guidePages/guidePages_route.js"></script>
+    <script src="areas/guidePages/guidePages_controller.js"></script>
+    <script src="areas/guidePages/guidePages_service.js"></script>
+    
+    <!--home首页js-->
+    <script src="areas/home/home_route.js"></script>
+    <script src="areas/home/home_controller.js"></script>
+    <script src="areas/home/home_service.js"></script>
+    
+    <!--tabs  js-->
+    <script src="areas/tabs/tabs_route.js"></script>
+    <script src="areas/tabs/tabs_controller.js"></script>
+    
+    <!--购物车cart  js-->
+    <script src="areas/cart/cart_route.js"></script>
+    <script src="areas/cart/cart_controller.js"></script>
+    <script src="areas/cart/cart_service.js"></script>
+    
+    <!--商品list  js-->
+    <script src="areas/list/list_route.js"></script>
+    <script src="areas/list/list_controller.js"></script>
+    <script src="areas/list/list_service.js"></script>
+    
+    <!--我的 my  js-->
+    <script src="areas/my/my_route.js"></script>
+    <script src="areas/my/my_controller.js"></script>
+    <script src="areas/my/my_service.js"></script>
+    
+    <!--单类商品goods  js-->
+    <script src="areas/goodsList/goodsList_route.js"></script>
+    <script src="areas/goodsList/goodsList_controller.js"></script>
+    <script src="areas/goodsList/goodsList_service.js"></script>
+    
+    <!--公共js-->
+    <script src="areas/common/common.js"></script>
+    <script src="areas/common/indexdb.js"></script>
+    
+  </head>
+  <body ng-app="starter">
+    <!--
+      The nav bar that will be updated as we navigate between views.
+    -->
+    <!--<ion-nav-bar class="bar-stable">
+      <ion-nav-back-button>
+      </ion-nav-back-button>
+    </ion-nav-bar>-->
+    <!--
+      The views will be rendered in the <ion-nav-view> directive below
+      Templates are in the /templates folder (but you could also
+      have templates inline in this html file if you'd like).
+    -->
+    <ion-nav-view></ion-nav-view>
+  </body>
+</html>
