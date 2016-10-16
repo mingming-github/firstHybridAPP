@@ -9,7 +9,7 @@ angular.module('tabs_route', [])
   // Each state's controller can be found in controllers.js
   $stateProvider
 
-  // setup an abstract state for the tabs directive
+  // 不能渲染到页面中
     .state('tab', {
     url: '/tab',
     abstract: true,
@@ -17,5 +17,5 @@ angular.module('tabs_route', [])
     controller:'tabsCtr'
   })
 
-  
+
 });

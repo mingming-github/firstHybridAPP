@@ -72,7 +72,7 @@ angular.module('homeCtr_Mod',[])
 		
 		changHearopcity();
 		gotop();
-		//绑定一个事件是为了解决，不能循环回第一张问题
+		//绑定一个事件是为了解决，不能循环回第一张问题   这是一个视图加载完成之后执行的事件 $ionicView.afterEnter
 		$scope.$on('$ionicView.afterEnter',function(){
 			initHearslide();
 			inittoutiaoSlider();

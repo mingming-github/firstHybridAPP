@@ -3,6 +3,8 @@
 angular.module('listCtr_Mod',[])
 	.controller('listCtr',function($scope,$state,$ionicHistory){
 		
+		
+		
 		$scope.$on('$ionicView.enter', function (e) {
 	      $scope.getCategoryDetailData(102);
 	    });

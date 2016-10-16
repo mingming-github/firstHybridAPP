@@ -8,9 +8,9 @@ angular.module('listRou_Mod',['listCtr_Mod','listSer_Mod'])
       				'tab-list': {
         			templateUrl: 'areas/list/listPages.html',
         			controller: 'listCtr'
-      				}		
+      				}
     			}
-  			})
+      })
 	});
 
 

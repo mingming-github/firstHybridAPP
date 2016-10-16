@@ -3,7 +3,9 @@ angular.module('route', [
 	'ionic','commonJs','indexdb',
 	'guidePagesRou_Mod', 'starter.controllers', 'starter.services',
 	'homeRou_Mod','tabs_route','cartRou_Mod','listRou_Mod',
-	'myRou_Mod','APT.goodsList.route'])//APT.goodsList.route单类商品列表
+	'myRou_Mod','APT.goodsList.route','APT.details.route',////APT.goodsList.route单类商品列表模块  APT.details.route详细内容模块
+	'APT.login.route'
+])
 
   .config(function($stateProvider, $urlRouterProvider) {
   

@@ -2,10 +2,13 @@
 angular.module('indexdb', [])
   .factory('IndexdbJs', ['$ionicPopup',function ($ionicPopup) {
 
+		//获取浏览器indexeddb对象    兼容不同的浏览器
     window.indexedDB = window.indexedDB || window.mozIndexedDB || window.webkitIndexedDB || window.msIndexedDB;
     window.IDBTransaction = window.IDBTransaction || window.webkitIDBTransaction || window.msIDBTransaction;
     window.IDBKeyRange = window.IDBKeyRange || window.webkitIDBKeyRange || window.msIDBKeyRange;
     window.IDBCursor=window.IDBCursor||window.webkitIDBCursor|| window.msIDBCursor;
+    
+    //定义indexeddb数据库的配置信息
     var db={
       dbName: 'aptdb',
       dbVersion: 2015, //用小数会四舍五入
@@ -16,9 +19,13 @@ angular.module('indexdb', [])
       },
 
       open: function (func,fail) {
+      	//创建数据库连接
         var dbContent = window.indexedDB.open(db.dbName, db.dbVersion);
+        //控制数据库版本升级的方法  dbVersion一改变，就会触发   在这个upgrade函数里可以创建多个表
         dbContent.onupgradeneeded = db.upgrade;
+        //当数据库连接失败时候的方法
         dbContent.onerror = db.errorHandler;
+        //当数据库连接成功时候的方法
         dbContent.onsuccess = function (e) {
           db.dbInstance = dbContent.result;
           db.dbInstance.onerror = fail;
@@ -27,7 +34,7 @@ angular.module('indexdb', [])
       },
       upgrade: function (e) {
         var _db = e.target.result,names = _db.objectStoreNames;
-        // 此处可以创建多个表
+        // 创建一个叫做cart的表
         var name = "cart";
         if (!names.contains(name)) {
           _db.createObjectStore(

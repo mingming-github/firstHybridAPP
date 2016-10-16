@@ -97,21 +97,21 @@ angular.module('APT.goodsList.service', [])
       loadMoreGoodsList: function (message) {
         var obj_goodsListData = [
           {
-            name: '澳贝琳 2015秋冬新款韩版修身显瘦中长款毛呢大衣女外套  8615  灰色 L',
+            name: '澳贝琳 2015秋冬新款韩版修身显瘦中长款毛呢大衣女外套  loadMore  灰色 L',
             price: '198',
             haoping: '99',
             buy: '81',
             src: 'img/goodsList/goods1.jpg'
           },
           {
-            name: '素念 毛呢大衣 女 2015秋装新款修身  连帽长袖毛呢外套女中长款呢子 大衣女欧美 藏青兰 L',
+            name: '素念 毛呢大衣 女 2015秋装新款修身  连帽长袖毛呢外套女中长款呢子 loadMore 藏青兰 L',
             price: '288',
             haoping: '100',
             buy: '253',
             src: 'img/goodsList/goods2.jpg'
           },
           {
-            name: '玫芭2015秋冬新款韩版时尚中长款毛呢外套修身毛呢大衣女BJ8008  土黄 L',
+            name: '玫芭2015秋冬新款韩版时尚中长款毛呢外套修身毛呢大衣女BJ8008 loadMore 土黄 L',
             price: '269',
             haoping: '99',
             buy: '155',
@@ -164,7 +164,9 @@ angular.module('APT.goodsList.service', [])
         var deferred = $q.defer();
         deferred.resolve(obj_goodsListData);
         return deferred.promise;
-
+				
+				
+				//下面是模拟真实情况
         //var deferred = $q.defer();
         //var url = Global.SERVER_PATH+"/WXPlatformServlet?method=mobileUserUndoTaskList&message="+message+"&loginName="+$window.localStorage['loginName']+"&platform="+Global.PLATFORM+"&module=bill&callback=JSON_CALLBACK";
         //$http.jsonp(url).success(function (data, status, headers, config) {
@@ -173,7 +175,41 @@ angular.module('APT.goodsList.service', [])
         //  deferred.reject(data);
         //});
         //return deferred.promise;
-      }
+      },
+    
+    
+    	/* //测试  //商品信息
+    	getgoodslist:function(){
+    		var dates=[
+	    		{
+	    			id:1,
+	    			name:'mm'
+	    		},
+	    		{
+	    			id:2,
+	    			name:'mm'
+	    		},
+	    		{
+	    			id:3,
+	    			name:'mm'
+	    		},
+    		]
+    		
+    		var deferred=$q.defer();
+    		
+    		setTimeout(function(){
+    			deferred.resolve(dates)  //resolv()代表完成状态的时候返回吃了一个数据   将这个数据存在了promise对象中
+    															 //rejected('没有得到数据')代表失败状态的时候返回吃了一个数据   将这个失败原因存在了promise对象中
+    															 //notify()代表未完成状态的时候返回吃了一个数据   返回失败的promise对象
+    		},5000);
+    		//$http.get().success(function(){//resolv()}).error(function(){ //rejected('没有得到数据')})
+    		
+    		
+    		return deferred.promise;
+    	}*/
+    
+    
+    
     }
-  
+  	
   }]);
